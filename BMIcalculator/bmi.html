@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="bmi.js"></script>
+</head>
+
+<body>
+
+    <h3> Body Mass Index Calculator</h3>
+    <p>Body Mass Index(BMI) is used as an indicator of total body fat. In order to calculate your BMI, please input your height and weight.</p>
+    <form id="vitalstatistics">
+        <!-- contains the fields for the user weight and height inputs anlong with dropdown units, all in a tabulated format-->
+        <fieldset>
+            <legend>Vital statistics</legend>
+            <table style="width:30%" id="vitalstatisticstable">
+
+                <tr>
+                    <td>Height:</td>
+                    <td> <input type="number" id="Height" style="width: 75px;"></td> <!-- height input-->
+                    <td> Units:</td>
+                    <td>
+                        <select id="heightunit">
+                            <!-- dropdown for height units-->
+                            <option value="inches">Inches</option>
+                            <option value="centimeters">Centimeters</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Weight:</td>
+                    <td> <input type="number" id="weight" style="width: 75px;"></td> <!-- weight input-->
+                    <td> Units:</td>
+                    <td>
+                        <select id="weightunit">
+                            <!-- dropdown for weight units-->
+                            <option value="pounds">Pounds</option>
+                            <option value="kilograms">Kilograms</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <p> Please check here if you want a detailed analysis of your BMI: <input type="checkbox" id="BMIdetailedcheck"></p> <!-- detailed analysis checker-->
+        </fieldset>
+    </form>
+    <form id="contactinformation">
+        <!-- conatins the fields for contact input in a tabulated format-->
+        <fieldset>
+            <legend>Contact Information</legend>
+            <p>Do you want your BMI sent to you by e-mail? <input type="checkbox" id="BMIemailcheck"></p>
+            <table id="vitalstatisticstable">
+                <tr>
+                    <td>E-mail Addres:</td>
+                    <td> <input type="email" id="email" style="width: 300px;"></td> <!--email address input-->
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td> <input type="text" id="name" style="width: 300px;"></td> <!--name input-->
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <form id="processing">
+        <fieldset>
+            <legend> Processing</legend>
+            <button type="button" id="computeyourBMI" onclick="computeBMI()">Compute your BMI</button> <!-- Button: submit the data and compute the results-->
+            <button type="button" id="resetform" onclick="resetBMI()">Reset Form</button> <!-- Button: Reset all the information in the input fields-->
+        </fieldset>
+    </form>
+    <footer>
+        <p>
+            Total body fat is correlated to the risk if certain diseases which can be potentially fatal. BMI is valid for both men and women. However, it should only be
+            used as a guidance as it has some limitations. It may overestimate the body fat in muscular persons and underestimate the body fat in person who have lost muscle mass.
+        </p>
+        <p> More information can be found at this <a href="http://www.bmi-calculator.net/" target="_blank">BMI Calculator</a> website. This website is based on the formula obtained from that site. </p> <!--website opens in a new tab-->
+        <p> Results/Error:</p> <!-- p fields here and below show the output from the input forms above-->
+        <p id="output"></p>
+        <p id="contacterror"></p>
+        <p id="featuresupport"></p>
+        <p id="bannedemails"></p>
+    </footer>
+</body>
+</html>
